@@ -1,0 +1,22 @@
+{
+    "name": "MyIF MBKM Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "cli",
+    "remoteUser": "puppet",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "neilbrayfield.php-docblocker",
+                "ms-azuretools.vscode-docker"
+            ],
+              "settings": {
+                "php.validate.executablePath": "/usr/local/bin/php"
+              }
+        }
+    },
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+
+  }
+  
