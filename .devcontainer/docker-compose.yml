@@ -4,6 +4,8 @@ services:
     build: cli/${PHP_VERSION}
     volumes:
       - ${SRC_PATH}:/workspace
+    networks:
+      - devnet
   nginx:
     container_name: ${PROJECT_NAME}-nginx
     build: nginx
