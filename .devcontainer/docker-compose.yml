@@ -31,7 +31,7 @@ services:
   #   image: mysql
   #   ports:
   #     - "3306:3306"
-  #   environment:
+  #   environment: # any env var below will have no impact if using existing data volume
   #     MYSQL_ROOT_PASSWORD: root
   #     MYSQL_DATABASE: devdb
   #     MYSQL_USER: devuser
@@ -56,7 +56,7 @@ services:
 
   redis:
     image: redis:latest
-    container_name: redis
+    container_name: ${PROJECT_NAME}-redis
     ports:
       - "6379:6379"
 
@@ -64,7 +64,7 @@ volumes:
   # dev-mysql-data:
     # external: true
   dev-mssql-data:
-    external: true # Comment this line if you want to create a new volume; i prefer put all of my dev db data of the same DBM in one volume
+    external: true
 
 networks:
   devnet:
